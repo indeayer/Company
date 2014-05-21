@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Facebook ID:</strong>
+  <%= @company_facebook.fid %>
+</p>
+
+<p>
+  <strong>Company Name:</strong>
+  <%= @company_facebook.company_name %>
+</p>
+
+<p>
+  <strong>Facebook Url:</strong>
+  <%= @company_facebook.f_url %>
+</p>
+
+<p>
+  <strong>Facebook likes:</strong>
+  <%= @company_facebook.f_likes %>
+</p>
+
+<p>
+  <strong>Company Description:</strong>
+  <%= @company_facebook.company_description %>
+</p>
+
+<%= link_to 'Edit', edit_company_facebook_path(@company_facebook) %> |
+<%= link_to 'Back', company_facebooks_path %>

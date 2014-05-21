@@ -1,0 +1,35 @@
+<%= form_for(@company_facebook) do |f| %>
+  <% if @company_facebook.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@company_facebook.errors.count, "error") %> prohibited this company_facebook from being saved:</h2>
+
+      <ul>
+      <% @company_facebook.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <center>
+
+  <div class="field">
+    <%= f.label :Facebook_ID %><br>
+    <%= f.number_field :fid %>
+  </div>
+  <div class="field">
+    <%= f.label :Company_Name %><br>
+    <%= f.text_field :company_name %>
+  </div>
+  <div class="field">
+    <%= f.label :Facebook_URL %><br>
+    <%= f.text_field :f_url %>
+  </div>
+  <div class="field">
+    <%= f.label :Company_Description %><br>
+    <%= f.text_field :company_description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</center>
+<% end %>
