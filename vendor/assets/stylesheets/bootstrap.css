@@ -25,6 +25,8 @@ summary {
   display: block;
 }
 
+
+
 audio,
 canvas,
 video {
@@ -48,6 +50,7 @@ html {
 
 body {
   margin: 0;
+  background-color: #3B2F63;
 }
 
 a:focus {
@@ -4923,7 +4926,10 @@ a.list-group-item.active > .badge,
   font-weight: 200;
   line-height: 2.1428571435;
   color: inherit;
-  background-color: #eeeeee;
+  background-color: ;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
 }
 
 .jumbotron h1 {

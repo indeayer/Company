@@ -5,7 +5,7 @@ class CompanyFacebook < ActiveRecord::Base
 	require 'net/http'
 
 	def self.updatelike        #Defining a method (.self means calling the method Detail from what I created eg: rails g Detail "tablename and data")
-		  @company_facebooks = CompanyFacebook.all
+		 
 		url = "http://localhost:3000/company_facebooks"
 		data = Nokogiri::HTML(open(url).read) #Opening the whole 9gag content and store it into data
 

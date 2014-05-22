@@ -6,6 +6,8 @@ class CompanyFacebooksController < ApplicationController
 
   require 'net/http'
 
+  def intro
+  end
   
   def index
     @company_facebooks = CompanyFacebook.all

@@ -1,7 +1,7 @@
 <center>
   <h3>Company Facebook Details</h3>
 
-<table class="table table-striped">  
+<table class="table table-bordered">  
   <thead>
     <tr>
       <th>Facebook ID</th>
@@ -9,9 +9,14 @@
       <th>Facebook url</th>
       <th>Facebook Likes</th>
       <th>Company description</th>
+      <% if !admin_signed_in? %>
+      <td> Admin Login </td>
+      <% end %>
+      <% if admin_signed_in? %>
       <th></th>
       <th></th>
       <th></th>
+      <% end %>
     </tr>
   </thead>
 
@@ -23,15 +28,24 @@
         <td><%= company_facebook.f_url %></td>
         <td><%= company_facebook.f_likes %></td>
         <td><%= company_facebook.company_description %></td>
+        <% if admin_signed_in? %>
         <td><%= link_to 'Show', company_facebook %></td>
         <td><%= link_to 'Edit', edit_company_facebook_path(company_facebook) %></td>
         <td><%= link_to 'Destroy', company_facebook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+        
+        <% if !admin_signed_in? %>
+        <td> <%= link_to 'Sign In', "/admins/sign_in" , target: '_blank' %> </td>
+        <% end %>
       </tr>
-    <% end %>
+        
+      <% end %>
   </tbody>
+
+      
 </table>
 
-<br>
 
-<%= link_to 'Not Listed? Add new Company here', new_company_facebook_path %>
+<%= link_to 'Not Listed? Add new Company here', new_company_facebook_path %><br>
+<%= link_to 'Facebook ID finder', "http://findmyfacebookid.com/" , target: '_blank' %>
 </center>
