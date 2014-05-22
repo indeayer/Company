@@ -4,6 +4,10 @@ class CompanyFacebook < ActiveRecord::Base
 	require 'open-uri'
 	require 'net/http'
 
+	validates_uniqueness_of :fid
+	validates_uniqueness_of :company_name
+	validates_uniqueness_of :f_url
+
 	def self.updatelike        #Defining a method (.self means calling the method Detail from what I created eg: rails g Detail "tablename and data")
 		 
 		url = "http://localhost:3000/company_facebooks"
