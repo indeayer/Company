@@ -10,7 +10,7 @@ class CompanyFacebooksController < ApplicationController
   end
   
   def index
-    @company_facebooks = CompanyFacebook.all
+    @company_facebooks = CompanyFacebook.find(:all, :limit => 20, :order => 'f_likes')
    end
 
   # GET /company_facebooks/1
